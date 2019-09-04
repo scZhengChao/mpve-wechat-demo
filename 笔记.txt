@@ -1,0 +1,24 @@
+mpvue:
+	
+	环境搭建:
+		vue init mpvue/mpvue-quickstart my-project
+
+注意：
+	钩子函数的this指向 vue组件
+	添加文件后，需要重启
+	wx工具指向dist/wx
+	资源： static/images
+	微信小程序的页面的 query 参数是通过 onLoad 获取的，mpvue 对此进行了优化，直接通过 this.$root.$mp.query.x 获取相应的参数数据
+	不支持过滤器
+	不支持 官方文档：Class 与 Style 绑定 中的 classObject 和 styleObject 语法。
+	事件直接在 dom 或者 小程序组件上 上将bind改为@ 
+	表单推荐使用小程序的组件
+	编写方式: vue习惯 + 小程序UI组件 + dom
+	路由使用小程序的，vue-router不支持, 使用navigator || a
+	v-for (item) of xx 时 出现 loader解析错误 -> item of xx
+	数据绑定时，不支持返单引
+	渲染： 对象.key && 对象.key.key
+	css作用域: vue的css没有隔离作用域|小程序有 需要时scoped
+	
+	mpvue vs wepy vs wxcode
+	http://www.bslxx.com/uploads/allimg/180312/1-1P3121A05GF.jpg
